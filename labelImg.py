@@ -132,12 +132,15 @@ class MainWindow(QMainWindow, WindowMixin):
         self.diffcButton.stateChanged.connect(self.btnstate)
         self.editButton = QToolButton()
         self.editButton.setToolButtonStyle(Qt.ToolButtonTextBesideIcon)
+        # Add a label for show Labels(bbox nums) ;hdebug
+        self.bboxNumLabel=QLabel("Labels")
 
         # Add some of widgets to listLayout
         listLayout.addWidget(self.editButton)
         listLayout.addWidget(self.diffcButton)
         listLayout.addWidget(useDefaultLabelContainer)
-
+        listLayout.addWidget(self.bboxNumLabel)
+        
         # Create and add a widget for showing current label items
         self.labelList = QListWidget()
         labelListContainer = QWidget()
@@ -817,7 +820,9 @@ class MainWindow(QMainWindow, WindowMixin):
         self.shapeSelectionChanged(True)
 
     def labelSelectionChanged(self):
-        item = self.currentItem()
+        item = self.currentItem()        
+        label_text="Labels:"+str(self.labelList.count()) #hdebug
+        self.bboxNumLabel.setText(label_text)
         if item and self.canvas.editing():
             self._noSelectionSlot = True
             self.canvas.selectShape(self.itemsToShapes[item])
@@ -1131,7 +1136,8 @@ class MainWindow(QMainWindow, WindowMixin):
                     path = ustr(os.path.abspath(relativePath))
                     images.append(path)
         natural_sort(images, key=lambda x: x.lower())
-        return images
+        return sorted(images) #hdebug        
+        # return images #ori
 
     def changeSavedirDialog(self, _value=False):
         if self.defaultSaveDir is not None:

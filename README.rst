@@ -22,6 +22,12 @@ by `ImageNet <http://www.image-net.org/>`__.  Besdies, it also supports YOLO for
 
 `Watch a demo video <https://youtu.be/p0nR2YsCY_U>`__
 
+Update by stevehjc
+------------------
+1. Add a label show the count of labels list
+2. TODO: Add polygon segment
+
+
 Installation
 ------------------
 
