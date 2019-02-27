@@ -27,7 +27,7 @@ Update by stevehjc
 1. Add a label show the count of labels list
 2. Add a circle on every bbox rectangle (easily distinguish between small targets)
 
-.. image:: https://raw.githubusercontent.com/stevehjc/labelImg/master/demo/demo6.jpg
+.. image:: /demo/demo6.jpg
      :alt: Demo Image
 
 3. TODO: Add polygon segment
