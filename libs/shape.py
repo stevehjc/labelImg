@@ -110,6 +110,19 @@ class Shape(object):
             painter.drawPath(line_path)
             painter.drawPath(vrtx_path)
             painter.fillPath(vrtx_path, self.vertex_fill_color)
+            # hdebug;draw center circle of bbox;
+            if len(self.points)>=4:
+                center_x=(self.points[0].x()+self.points[2].x())/2
+                center_y=(self.points[0].y()+self.points[2].y())/2
+                width_circle=(self.scale*15)
+                pen.setWidth(width_circle)
+                pen.setColor(QColor(255, 0, 0))
+                painter.setPen(pen)
+                painter.drawEllipse(center_x-width_circle,center_y-width_circle,width_circle*2,width_circle*2)
+                # recover the color and width of pen
+                pen.setWidth(max(1, int(round(2.0 / self.scale))))
+                pen.setColor(color)
+                painter.setPen(pen)
 
             # Draw text at the top-left
             if self.paintLabel:

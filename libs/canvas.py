@@ -467,8 +467,9 @@ class Canvas(QWidget):
             p.setBrush(brush)
             p.drawRect(leftTop.x(), leftTop.y(), rectWidth, rectHeight)
 
+	# Draw the crosss line
         if self.drawing() and not self.prevPoint.isNull() and not self.outOfPixmap(self.prevPoint):
-            p.setPen(QColor(0, 0, 0))
+            p.setPen(QColor(0, 0, 0)) 
             p.drawLine(self.prevPoint.x(), 0, self.prevPoint.x(), self.pixmap.height())
             p.drawLine(0, self.prevPoint.y(), self.pixmap.width(), self.prevPoint.y())
 

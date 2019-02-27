@@ -25,7 +25,8 @@ by `ImageNet <http://www.image-net.org/>`__.  Besdies, it also supports YOLO for
 Update by stevehjc
 ------------------
 1. Add a label show the count of labels list
-2. TODO: Add polygon segment
+2. Add a circle on every bbox rectangle (easily distinguish between small targets)
+3. TODO: Add polygon segment
 
 
 Installation
